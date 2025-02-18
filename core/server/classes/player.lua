@@ -44,6 +44,18 @@ function RemovePlayer(id)
     PlayerList[id] = nil
 end
 
+function EZ.GetPlayer(id)
+    return PlayerList[id]
+end
+
+function EZ.GetPlayers()
+    local players = {}
+    for id, object in pairs(PlayerList) do
+        table.insert(players, id)
+    end
+    return players
+end
+
 function Player:getIdentifier()
     return self.identifier;
 end
